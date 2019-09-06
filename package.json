@@ -1,6 +1,6 @@
 {
   "name": "adonis-swagger-provider",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Adonis swagger provider",
   "main": "Providers/AdonisSwaggerProvider.js",
   "repository": {
