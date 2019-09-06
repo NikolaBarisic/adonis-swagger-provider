@@ -3,29 +3,28 @@
 const { Command } = require('@adonisjs/ace')
 const path = require('path')
 
-class SwaggerJSON extends Command {
+class SwaggerDefault extends Command {
     static get signature () {
-        return 'swagger:json'
+        return 'swagger:defaultjson'
     }
 
     static get description () {
-        return 'Swagger json docs'
+        return 'Swagger default json docs'
     }
 
     async handle (args, options) {
 
-        const Config = use('Config')
+        await this.copy(path.join(__dirname, '../Samples/TestSwagger.js'), 'public/docs')
+
         const Helpers = use('Helpers')
         const swaggerJSDoc = require('swagger-jsdoc');
 
-        let json, defaultSwagger
+        let json
 
         try{
-            const swagger = Config.get("swagger")
+            const defaultSwagger = require(path.join(__dirname, '../Samples/Config.js'))
 
-            if(!swagger ) defaultSwagger = require(path.join(__dirname, '../Samples/Config.js'))
-
-            json = await swaggerJSDoc(swagger || defaultSwagger)
+            json = await swaggerJSDoc(defaultSwagger)
         }
         catch(err){
             if(err) this.error(`${this.icon('error')} Fail`)
@@ -46,4 +45,4 @@ class SwaggerJSON extends Command {
     }
 }
 
-module.exports = SwaggerJSON
+module.exports = SwaggerDefault

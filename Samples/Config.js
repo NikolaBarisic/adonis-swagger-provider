@@ -22,7 +22,7 @@ module.exports = {
         ],
     },
     // Path to the API docs
-    apis: ['./test.js']
+    apis: ['./TestSwagger.js']
 }
 
 
