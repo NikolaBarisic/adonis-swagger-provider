@@ -5,3 +5,5 @@ package-lock.json
 # VSCode & Webstorm history directories
 .history
 .idea
+
+.DS_Store

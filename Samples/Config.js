@@ -8,7 +8,7 @@ module.exports = {
             version: '1.0.0', // Version (required)
             termsOfService: "http://swagger.io/terms/",
             contact: {
-                email: "nikola.barisic@gauss.hr"
+                email: "swagger@swagger.com"
             },
             license: {
                 name: "Apache 2.0",
