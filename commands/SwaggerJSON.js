@@ -13,21 +13,29 @@ class SwaggerJSON extends Command {
 
     async handle (args, options) {
 
-
-        const swaggerJSDoc = require('swagger-jsdoc');
         const Config = use('Config')
         const Helpers = use('Helpers')
+        console.log("config", config)
         const swagger = Config.get('swagger')
         const fs = use('fs')
+        const swaggerJSDoc = require('swagger-jsdoc');
 
-        const json = await swaggerJSDoc(swagger)
+
+        let json
+
+        try{
+            json = await swaggerJSDoc(swagger)
+        }
+        catch(err){
+            if(err) this.error(`${this.icon('error')} Fail`)
+        }
 
         const err = fs.writeFile(`${Helpers.publicPath('/swagger.json')}`, JSON.stringify(json), 'utf8', (err =>{
             if(err) return err
         }))
 
         if(err) {
-            this.success(`${this.icon('error')} Fail`)
+            this.error(`${this.icon('error')} Fail`)
         }
         else {
             this.success(`${this.icon('success')} Completed`)
