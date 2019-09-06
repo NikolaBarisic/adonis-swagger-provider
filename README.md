@@ -16,6 +16,8 @@ const providers = [
 
 3. make `config/swagger.js` as per instructions [here](https://github.com/NikolaBarisic/adonis-swagger-provider/blob/master/Samples/Config.js)
 
+4. make `TestSwagger.js` as per instructions [here](https://github.com/NikolaBarisic/adonis-swagger-provider/blob/master/Samples/TestSwagger.js)
+
 ## Commands
 
 `node ace swagger:ui` Export swagger-ui <br/>
