@@ -1,6 +1,6 @@
 {
   "name": "adonis-swagger-provider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adonis swagger provider",
   "main": "Providers/AdonisSwaggerProvider.js",
   "repository": {
@@ -17,7 +17,7 @@
   },
   "author": "Nikola Barisic",
   "license": "ISC",
-  "homepage": "https://github.com/nbarisic/adonis-swagger-provider#readme",
+  "homepage": "https://github.com/NikolaBarisic/adonis-swagger-provider",
   "dependencies": {
     "swagger-jsdoc": "^3.4.0"
   },
@@ -26,6 +26,6 @@
     "@adonisjs/ace": "^5.0.8"
   },
   "bugs": {
-    "url": "https://github.com/nbarisic/adonis-swagger-provider/issues"
+    "url": "https://github.com/NikolaBarisic/adonis-swagger-provider/issues"
   }
 }
