@@ -34,11 +34,9 @@ class SwaggerJSON extends Command {
             process.exit(0)
         }
 
-        const err = fs.writeFile(`${Helpers.publicPath('/swagger.json')}`, JSON.stringify(json), 'utf8', (err =>{
-            if(err) return err
-        }))
+        const payload = await this.writeFile(`${Helpers.publicPath('/swagger.json')}`, JSON.stringify(json))
 
-        if(err) {
+        if(payload) {
             this.error(`${this.icon('error')} Fail`)
             process.exit(0)
         }
