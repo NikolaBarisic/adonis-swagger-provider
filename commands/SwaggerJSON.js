@@ -1,6 +1,7 @@
 'use strict'
 
 const { Command } = require('@adonisjs/ace')
+const path = require('path')
 
 class SwaggerJSON extends Command {
     static get signature () {
@@ -16,18 +17,21 @@ class SwaggerJSON extends Command {
         const Config = use('Config')
         const Helpers = use('Helpers')
 
-        const swagger = Config.get('swagger')
         const fs = use('fs')
         const swaggerJSDoc = require('swagger-jsdoc');
 
-
-        let json
+        let json, defaultSwagger
 
         try{
-            json = await swaggerJSDoc(swagger)
+            const swagger = Config.get("swagger")
+
+            if(!swagger ) defaultSwagger = require(path.join(__dirname, '../Samples/Config.js'))
+
+            json = await swaggerJSDoc(swagger || defaultSwagger)
         }
         catch(err){
             if(err) this.error(`${this.icon('error')} Fail`)
+            process.exit(0)
         }
 
         const err = fs.writeFile(`${Helpers.publicPath('/swagger.json')}`, JSON.stringify(json), 'utf8', (err =>{
@@ -36,14 +40,13 @@ class SwaggerJSON extends Command {
 
         if(err) {
             this.error(`${this.icon('error')} Fail`)
+            process.exit(0)
         }
         else {
+            if(defaultSwagger) this.success(`${this.icon('success')} Generate default swagger json.`)
             this.success(`${this.icon('success')} Completed`)
+            process.exit(0)
         }
-
-
-
-
     }
 }
 
