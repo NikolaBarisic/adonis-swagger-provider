@@ -15,7 +15,7 @@ class SwaggerJSON extends Command {
 
         const Config = use('Config')
         const Helpers = use('Helpers')
-        console.log("config", config)
+
         const swagger = Config.get('swagger')
         const fs = use('fs')
         const swaggerJSDoc = require('swagger-jsdoc');
