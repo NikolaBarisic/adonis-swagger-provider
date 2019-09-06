@@ -13,7 +13,7 @@ class SwaggerUI extends Command {
     }
 
     async handle (args, options) {
-        await this.copy(path.join(__dirname, '../data/docs'), 'public/docs')
+        await this.copy(path.join(__dirname, '../data'), 'public/docs')
 
         this.success(`${this.icon('success')} Completed`)
     }

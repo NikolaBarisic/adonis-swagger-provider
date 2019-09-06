@@ -1,5 +1,5 @@
 'use strict'
-const { ServiceProvider } = use('@adonisjs/fold')
+const { ServiceProvider } = require('@adonisjs/fold')
 const ace = require('@adonisjs/ace')
 
 class AdonisSwaggerProvider extends ServiceProvider {
