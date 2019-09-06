@@ -14,15 +14,15 @@ class SwaggerDefault extends Command {
 
     async handle (args, options) {
 
-        await this.copy(path.join(__dirname, '../Samples/TestSwagger.js'), 'public')
+        await this.copy(path.join(__dirname, '../Samples/TestSwagger.js'), './TestSwagger.js')
 
         const Helpers = use('Helpers')
         const swaggerJSDoc = require('swagger-jsdoc');
 
-        let json
+        let json, defaultSwagger
 
         try{
-            const defaultSwagger = require(path.join(__dirname, '../Samples/Config.js'))
+            defaultSwagger = require(path.join(__dirname, '../Samples/Config.js'))
 
             json = await swaggerJSDoc(defaultSwagger)
         }
