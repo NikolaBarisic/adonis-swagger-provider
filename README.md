@@ -18,11 +18,11 @@ const providers = [
 
 ## Commands
 
-`node ace swagger:ui` Export swagger-ui
-`node ace swagger:json` Create swagger.json inside `public/swagger.json`
-`node ace swagger:defaultjson` Create default swagger.json inside `public/swagger.json`
+`node ace swagger:ui` Export swagger-ui <br/>
+`node ace swagger:json` Create swagger.json inside `public/swagger.json` <br/>
+`node ace swagger:defaultjson` Create default swagger.json inside `public/swagger.json` and read config.js `/node_modules/adonis-swagger-provider/Samples/Config.js` <br/>
 
 
 ## Thanks
 
-Special thanks to creators of adonis.js and bull
+Special thanks to creators of adonis.js and swagger
