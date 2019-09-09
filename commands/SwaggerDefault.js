@@ -1,5 +1,4 @@
 'use strict'
-
 const { Command } = require('@adonisjs/ace')
 const path = require('path')
 
@@ -13,7 +12,6 @@ class SwaggerDefault extends Command {
     }
 
     async handle (args, options) {
-
         await this.copy(path.join(__dirname, '../Samples/TestSwagger.js'), './TestSwagger.js')
 
         const Helpers = use('Helpers')

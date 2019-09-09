@@ -1,5 +1,4 @@
 'use strict'
-
 const { Command } = require('@adonisjs/ace')
 const path = require('path')
 
