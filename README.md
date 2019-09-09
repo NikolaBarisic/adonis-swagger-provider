@@ -4,7 +4,7 @@ Gives nice [adonis](https://github.com/adonisjs/adonis-framework)-like interface
 
 ## Installation
 
-1. `npm i adonis-swagger-provider --save`
+1. `npm i --save adonis-swagger-provider `
 2. register provider inside `start/app.js`
 
 ```
@@ -17,6 +17,8 @@ const providers = [
 3. make `config/swagger.js` as per instructions [here](https://github.com/NikolaBarisic/adonis-swagger-provider/blob/master/Samples/Config.js)
 
 4. make `TestSwagger.js` as per instructions [here](https://github.com/NikolaBarisic/adonis-swagger-provider/blob/master/Samples/TestSwagger.js)
+
+5. Run `adonis serve --dev` go to `http://localhost:3333/docs/`
 
 ## Commands
 
